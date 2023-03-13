@@ -50,8 +50,8 @@ insert into utilisateur (username,password,email,administrator) values ("Léo","
 insert into utilisateur (username,password,email,administrator) values ("Enstso","siojjr","enstso@outlook.fr",1);
 insert into utilisateur (username,password,email,administrator) values ("Sami","siojjr","samie17030@gmail.com",0);
 insert into catalogue (nom_catalogue) values ("aspirateur");
-insert into catalogue (nom_catalogue) values ("réfrigérateur");
-insert into catalogue (nom_catalogue) values ("télévision");
+insert into catalogue (nom_catalogue) values ("fauteuil");
+insert into catalogue (nom_catalogue) values ("tv");
 
 
 insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Aspirateur sans fil Dyson V15 Detect™ Absolute (Nickel)",1,"balai électrique - Autonomie 80 min - Temps de charge 4 h - Capacité 0.70 - Tension 21.6 V ",749.00,"aspi1.png");

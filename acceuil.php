@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
-
-</head>
-
+<?php include("head.php")?>
 <body>
-    <?php 
+    <?php
     include("header.php");
     ?>
 
+    <main class="mt-120 mb-75">
+        <div class="container ">
+            <h1 class="text-center fs-50 "> Nos derniers articles</h1>
+            <div id="carouselExample" class="carousel slide fixed" data-bs-ride="carousel">
+                <div class="carousel-inner  ">
+                    <div class="carousel-item active text-center ">
+                        <a href="aspirateur.php">
+                            <img src="img\aspi1.jpg" class="img-fluid" alt="...">
+                        </a>
+                    </div>
+                    <div class="carousel-item text-center ">
+                        <a href="fauteuil.php">
+                            <img src="img\canap1.jpg" class="img-fluid" alt="...">
+                        </a>
+                    </div>
+                    <div class="carousel-item text-center ">
+                        <a href="tv.php">
+                            <img src="img\tv1.jpg" class="img-fluid" alt="...">
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon text-secondary" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next " type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+       
+    </main>
+    <?php include("footer.php")?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script>

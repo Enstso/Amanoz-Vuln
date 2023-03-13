@@ -43,7 +43,7 @@ class Mettre{
 }
 Catalogue "1..1"--- "1..*" Article
 Article "1..*"--"0..*" Panier
-Utilisateur "1..1 "---"1..1"Panier
+Utilisateur "1..1 "---"0..1"Panier
 (Article,Panier)..Mettre
 @enduml
 ```

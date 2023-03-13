@@ -1,4 +1,4 @@
-<header class="bg-light fixed-top">
+<header class="bg-light fixed-top ">
     <nav class="navbar navbar-expand-md navbar-light   ">
         <div class="container">
             <a class="navbar-brand text-uppercase fw-bold text-dark" href="acceuil.php">
@@ -9,7 +9,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="nav-items">
                 <ul class=" navbar-nav">
-                    <li class="nav-item active"><a class="nav-link " href="refrigerateur.php">Réfrigérateur</a></li>
+                    <li class="nav-item active"><a class="nav-link " href="tv.php">Télévison</a></li>
                     <li class="nav-item"><a class="nav-link " href="fauteuil.php">Fauteuil</a></li>
                     <li class="nav-item"><a class="nav-link " href="aspirateur.php">Aspirateur</a></li>
                     <li class="nav-item"><a class="nav-link " href="#4">Contact</a></li>

@@ -9,7 +9,7 @@
     ?>
   <main class="mt-120 mb-75">
         <div class="container ">
-            <h1 class="text-center fs-50 "> Nos Fauteuils</h1>
+            <h1 class="text-center fs-50 "> Nos Télévisions</h1>
            
         </div>
        
