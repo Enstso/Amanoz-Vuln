@@ -2,7 +2,8 @@
 <html>
 
 
-<?php include("head.php")?>
+<?php include("head.php") ?>
+
 <body>
     <?php
     include("header.php");
@@ -17,16 +18,19 @@
                         <a href="aspirateur.php">
                             <img src="img\aspi1.jpg" class="img-fluid" alt="...">
                         </a>
+                        <h5>Aspirateur</h5>
                     </div>
                     <div class="carousel-item text-center ">
                         <a href="fauteuil.php">
                             <img src="img\canap1.jpg" class="img-fluid" alt="...">
                         </a>
+                        <h5>Fauteuil</h5>
                     </div>
                     <div class="carousel-item text-center ">
                         <a href="tv.php">
                             <img src="img\tv1.jpg" class="img-fluid" alt="...">
                         </a>
+                        <h5>Télévision</h5>
                     </div>
                 </div>
                 <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -38,10 +42,37 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <a href="#exampleModal" data-bs-toggle="modal" class="text-decoration-none text-dark">
+                <h3 class="text-center">Qui sommes nous ?</h3>
+            </a>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Qui sommes nous ?</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="img\rse.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptates voluptatum expedita explicabo corrupti. Voluptas fugiat aspernatur optio vero vitae accusantium exercitationem recusandae asperiores. Quod autem dignissimos ea nemo quaerat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-       
     </main>
-    <?php include("footer.php")?>
+
+    <?php include("footer.php") ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script>

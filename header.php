@@ -12,7 +12,7 @@
                     <li class="nav-item active"><a class="nav-link " href="tv.php">Télévison</a></li>
                     <li class="nav-item"><a class="nav-link " href="fauteuil.php">Fauteuil</a></li>
                     <li class="nav-item"><a class="nav-link " href="aspirateur.php">Aspirateur</a></li>
-                    <li class="nav-item"><a class="nav-link " href="#4">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link " data-bs-toggle="modal" href="#Contact">Contact</a></li>
 
                     <li class="nav-item dropdown">
 
@@ -32,4 +32,47 @@
             </div>
         </div>
     </nav>
+
 </header>
+
+<div class="modal fade" id="Contact" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ModalLabel">Qui sommes nous ?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 col-md-6 offset-md-1">
+                    <form action="contact.php" method="Post">
+                        <div class=" row mb-3">
+                            <div class="col-6">
+                                <label for="input1" class="form-label fs-5">Prénom</label>
+                                <input type="text" id="input1" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="input2" class="form-label fs-5">Nom</label>
+                                <input type="text" id="input2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="input3" class="form-label fs-5">Adresse Email</label>
+                                <input type="email" id="input3" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="input4" class="form-label fs-5">Message</label>
+                                <textarea name="txtar" id="input4" class="form-control" cols="10" rows="7"></textarea>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" type="submit" class="btn btn-dark" data-bs-dismiss="modal">Envoyer</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
