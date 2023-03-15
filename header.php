@@ -1,7 +1,7 @@
 <header class="bg-light fixed-top ">
     <nav class="navbar navbar-expand-md navbar-light   ">
         <div class="container">
-            <a class="navbar-brand text-uppercase fw-bold text-dark" href="acceuil.php">
+            <a class="navbar-brand text-uppercase fw-bold text-dark" href="accueil.php">
                 <span class="bg-dark bg-gradient p-1 rounded-3 text-light">AMA</span> NOZ
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-items" aria-controls="nav-items" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,14 +43,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="col-12 col-md-6 offset-md-1">
+                <div class="col-12 ">
                     <form action="contact.php" method="Post">
                         <div class=" row mb-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label for="input1" class="form-label fs-5">Prénom</label>
                                 <input type="text" id="input1" class="form-control">
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label for="input2" class="form-label fs-5">Nom</label>
                                 <input type="text" id="input2" class="form-control">
                             </div>
