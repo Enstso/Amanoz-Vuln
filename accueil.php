@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <?php include("head.php") ?>
 
 <body>
@@ -12,13 +11,13 @@
     <main class="mt-120 mb-75">
         <div class="container ">
             <h1 class="text-center fs-50 "> Nos derniers articles</h1>
-            <div id="carouselExample" class="carousel slide fixed" data-bs-ride="carousel">
+            <div id="carouselExample" class="carousel slide fixed " data-bs-ride="carousel">
                 <div class="carousel-inner  ">
                     <div class="carousel-item active text-center ">
-                        <a href="aspirateur.php">
-                            <img src="img\aspi1.jpg" class="img-fluid" alt="...">
+                        <a href="lit.php">
+                            <img src="img\lit1.jpg" class="img-fluid" alt="...">
                         </a>
-                        <h5>Aspirateur</h5>
+                        <h5>Lit</h5>
                     </div>
                     <div class="carousel-item text-center ">
                         <a href="fauteuil.php">

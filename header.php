@@ -11,7 +11,7 @@
                 <ul class=" navbar-nav">
                     <li class="nav-item active"><a class="nav-link " href="tv.php">Télévison</a></li>
                     <li class="nav-item"><a class="nav-link " href="fauteuil.php">Fauteuil</a></li>
-                    <li class="nav-item"><a class="nav-link " href="aspirateur.php">Aspirateur</a></li>
+                    <li class="nav-item"><a class="nav-link " href="lit.php">Lit</a></li>
                     <li class="nav-item"><a class="nav-link " data-bs-toggle="modal" href="#Contact">Contact</a></li>
 
                     <li class="nav-item dropdown">
@@ -20,6 +20,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" id="drop">
                             <li><a class="dropdown-item" href="moncompte.php">Votre compte</a></li>
                             <li><a class="dropdown-item" href="commandes.php">Vos commandes</a></li>
+                            <li><a class="dropdown-item" data-bs-toggle="modal" href="#addArticle">Ajouter des articles</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -65,6 +66,56 @@
                             <div class="col-12">
                                 <label for="input4" class="form-label fs-5">Message</label>
                                 <textarea name="txtar" id="input4" class="form-control" cols="10" rows="7"></textarea>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" type="submit" class="btn btn-dark" data-bs-dismiss="modal">Envoyer</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addArticle" tabindex="-1" aria-labelledby="ModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ModalLabel2">Ajouter article</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 ">
+                    <form action="addarticle.php" method="Post">
+                        <div class=" row mb-3">
+                            <div class="col-6">
+                                <label for="addNom"class="form-label fs-5">Nom</label>
+                                <input type="text" id="addNom" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="addPrix" class="form-label fs-5">Prix</label>
+                                <input type="text" id="addPrix" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <select name="catalogue" class="form-select" aria-label="Default select example" aria-placeholder="Catalogue">
+                                    <option value="" disabled selected hidden>Catalogue</option>
+                                    <option value="1">Télévision</option>
+                                    <option value="2">Fauteuil</option>
+                                    <option value="3">Lit</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="addimg" class="form-label fs-5">Image</label>
+                                <input type="file" class="form-control" id="addimg" name="addimg" accept="image/png, image/jpeg">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="addDescription" class="form-label fs-5">Description</label>
+                                <textarea name="addDescription" id="addDescription" class="form-control" cols="10" rows="7"></textarea>
                             </div>
                         </div>
                 </div>

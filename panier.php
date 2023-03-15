@@ -25,7 +25,7 @@
                             <div style="width: 80px;">
                                 <h5 class="mb-0">$900</h5>
                             </div>
-                            <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                         </div>
                     </div>
                 </div>

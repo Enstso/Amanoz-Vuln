@@ -30,16 +30,15 @@ CREATE TABLE Article(
 
 CREATE TABLE Panier(
 	id_panier INTEGER NOT NULL Auto_Increment,
-	num_article INTEGER,
 	num_utilisateur INTEGER,
+	passer Boolean,
 	PRIMARY KEY(id_panier),
-	FOREIGN KEY(num_article) REFERENCES Article(id_article),
 	FOREIGN KEY(num_utilisateur) REFERENCES Utilisateur(id_utilisateur)
 );
 
 CREATE TABLE Mettre(
 	id_article,
-	id_panier
+	id_panier,
 	PRIMARY KEY(id_article,id_panier),
 	FOREIGN KEY(id_article) REFERENCES Article(id_article),
 	FOREIGN KEY(id_panier) REFERENCES Panier(id_panier)
