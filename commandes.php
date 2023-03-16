@@ -9,7 +9,7 @@
 
     <main>
         <div class="container">
-            <div class="card mb-3">
+            <div class="card mb-3 mt-120">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex flex-row align-items-center">
@@ -31,7 +31,8 @@
             </div>
         </div>
     </main>
-    <?php include("footer.php") ?>
+    <?php include("footer2.php") ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script>
