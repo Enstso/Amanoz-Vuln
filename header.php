@@ -18,9 +18,12 @@
 
                         <a class="nav-link  " data-bs-toggle="dropdown" aria-expanded="false" href="#drop"><i class="bi bi-person"></i></a>
                         <ul class="dropdown-menu dropdown-menu-dark" id="drop">
+                            <li><a class="dropdown-item" href="#"><?= $_SESSION['login']; ?></a></li>
+                            <?php if($_SESSION['administrateur']==1):;?>
+                            <li><a class="dropdown-item" data-bs-toggle="modal" href="#addArticle">Ajouter des articles</a></li>
+                            <?php endif; ?>
                             <li><a class="dropdown-item" href="moncompte.php">Votre compte</a></li>
                             <li><a class="dropdown-item" href="commandes.php">Vos commandes</a></li>
-                            <li><a class="dropdown-item" data-bs-toggle="modal" href="#addArticle">Ajouter des articles</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -48,24 +51,24 @@
                     <form action="contact.php" method="Post">
                         <div class=" row mb-3">
                             <div class="col-12">
-                                <label for="input1" class="form-label fs-5">Prénom</label>
-                                <input type="text" id="input1" class="form-control">
+                                <label for="prenom" class="form-label fs-5">Prénom</label>
+                                <input type="text" id="prenom" class="form-control" maxlength="30" required>
                             </div>
                             <div class="col-12">
                                 <label for="input2" class="form-label fs-5">Nom</label>
-                                <input type="text" id="input2" class="form-control">
+                                <input type="text" id="input2" class="form-control" maxlength="30" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-12">
-                                <label for="input3" class="form-label fs-5">Adresse Email</label>
-                                <input type="email" id="input3" class="form-control">
+                                <label for="email" class="form-label fs-5">Adresse Email</label>
+                                <input type="email" id="email" class="form-control" maxlength="50" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-12">
-                                <label for="input4" class="form-label fs-5">Message</label>
-                                <textarea name="txtar" id="input4" class="form-control" cols="10" rows="7"></textarea>
+                                <label for="message" class="form-label fs-5">Message</label>
+                                <textarea name="txtar" id="message" class="form-control" cols="10" rows="7" required maxlength="300"></textarea>
                             </div>
                         </div>
                 </div>
@@ -78,11 +81,11 @@
     </div>
 </div>
 
-<div class="modal fade" id="addArticle" tabindex="-1" aria-labelledby="ModalLabel2" aria-hidden="true">
+<div class="modal fade" id="addArticle" tabindex="-1" aria-labelledby="mlbl2" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="ModalLabel2">Ajouter article</h1>
+                <h1 class="modal-title fs-5" id="mlbl2">Ajouter article</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -90,12 +93,12 @@
                     <form action="addarticle.php" method="Post">
                         <div class=" row mb-3">
                             <div class="col-6">
-                                <label for="addNom"class="form-label fs-5">Nom</label>
-                                <input type="text" id="addNom" class="form-control">
+                                <label for="addNom"class="form-label fs-5" require>Nom</label>
+                                <input type="text" name="addNom" id="addNom" class="form-control">
                             </div>
                             <div class="col-6">
                                 <label for="addPrix" class="form-label fs-5">Prix</label>
-                                <input type="text" id="addPrix" class="form-control">
+                                <input type="text" name="addPrix" id="addPrix" class="form-control">
                             </div>
                         </div>
                         <div class="row mb-3">

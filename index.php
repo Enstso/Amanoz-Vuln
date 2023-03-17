@@ -25,15 +25,15 @@
       <form method="Post" action="index.php" class="form-signin">
         <main>
           <div class="form-group row mb-4">
-            <label for="inputEmail3" class="col-12">Email</label>
+            <label for="email" class="col-12">Email</label>
             <div class="col-12">
-              <input type="email" class="form-control" id="inputEmail3">
+              <input type="email" name="email" class="form-control" id="email" minlength="2" maxlength="20" required>
             </div>
           </div>
           <div class="form-group row mb-4">
-            <label for="inputPassword3" class="col-12">Mot de passe</label>
+            <label for="password" class="col-12">Mot de passe</label>
             <div class="col-12">
-              <input type="password" class="form-control" id="inputPassword3">
+              <input type="password" class="form-control" id="password" name="password" minlength="2" maxlength="20" required>
             </div>
           </div>
           <button class="btn btn-dark w-100 p-2">Se Connecter</button>
@@ -48,6 +48,57 @@
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   </script>
+  <?php
+  if (isset($_POST['email']) && isset($_POST['password'])) {
+    session_start();
+    require_once("bddconnexion.php");
+
+    if (!empty($_POST['email'] && $_POST['password'])) {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      $req = $bdd->prepare('Select * from Utilisateur where email ="' . $email . '"');
+      $req->execute();
+      $user = $req->fetchAll();
+
+      if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['login'] = $user['username'];
+        $_SESSION['id'] = $user['id_utilisateur'];
+        $_SESSION['role'] = $user['administrator'];
+        if ($user['password'] == $password) {
+          header('Location:acceuil.php');
+        } else {
+          header('Location: index.php');
+          echo '<div class="alert alert-warning" role="alert">
+          Impossible de se connecter
+        </div>';
+        die();
+        }
+      }
+      else{
+        header('Location: index.php');
+          echo '<div class="alert alert-warning" role="alert">
+          Impossible de se connecter
+        </div>';
+        die();
+      }
+    }
+    else{
+      header('Location: index.php');
+          echo '<div class="alert alert-warning" role="alert">
+          Impossible de se connecter
+        </div>';
+        die();
+    }
+  }
+  else{
+    header('Location: index.php');
+          echo '<div class="alert alert-warning" role="alert">
+          Impossible de se connecter
+        </div>';
+        die();
+  }
+  ?>
 </body>
 
 </html>
