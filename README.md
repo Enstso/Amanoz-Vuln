@@ -51,9 +51,9 @@ Utilisateur "1..1 "---"0..1"Panier
 ## Base de données :
 
 ```sql
+DROP database if exists dbamanoz;
 CREATE DATABASE dbamanoz DEFAULT CHARACTER SET utf8 COLLATE utf8_swedish_ci;
-DROP database if exists dbamanoz
-USE site;
+USE dbamanoz;
 
 CREATE TABLE Utilisateur(
 	id_utilisateur INTEGER NOT NULL Auto_Increment,
@@ -61,7 +61,7 @@ CREATE TABLE Utilisateur(
 	password varchar(40) NOT NULL,
 	email varchar(100) NOT NULL,
 	administrator Boolean,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id_utilisateur)
 );
 
 CREATE TABLE Catalogue(
@@ -72,7 +72,7 @@ CREATE TABLE Catalogue(
 
 CREATE TABLE Article(
 	id_article INTEGER NOT NULL Auto_Increment,
-	nom_article varchar(100)
+	nom_article varchar(100),
 	description_article varchar(1000),
 	prix_article float,
 	image_article varchar(150),
@@ -83,19 +83,19 @@ CREATE TABLE Article(
 
 CREATE TABLE Panier(
 	id_panier INTEGER NOT NULL Auto_Increment,
-	num_article INTEGER,
 	num_utilisateur INTEGER,
+	passer Boolean,
 	PRIMARY KEY(id_panier),
-	FOREIGN KEY(num_article) REFERENCES Article(id_article),
 	FOREIGN KEY(num_utilisateur) REFERENCES Utilisateur(id_utilisateur)
 );
 
 CREATE TABLE Mettre(
-	id_article,
-	id_panier
+	id_article INTEGER,
+	id_panier INTEGER,
 	PRIMARY KEY(id_article,id_panier),
 	FOREIGN KEY(id_article) REFERENCES Article(id_article),
 	FOREIGN KEY(id_panier) REFERENCES Panier(id_panier)
 );
+
 ```
 

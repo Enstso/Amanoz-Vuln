@@ -22,23 +22,24 @@
   <div class="container">
     <main class=" position-absolute top-50 start-50 translate-middle">
       <h1 class="h3 mb-3 font-weight-normal  text-white text-center"> <span class=" bg-dark bg-gradient p-1 m-0 rounded-3">AMA</span> <span class=" m-0 text-dark p-1 fs-2">NOZ</span> </h1>
-      <form method="Post" action="index.php" class="form-signin">
+      <form method="Post" action="index.php"  class="form-signin">
         <main>
           <div class="form-group row mb-4">
             <label for="email" class="col-12">Email</label>
             <div class="col-12">
-              <input type="email" name="email" class="form-control" id="email" minlength="2" maxlength="20" required>
+              <input type="email" name="email" class="form-control" id="email" minlength="2" maxlength="30" required>
             </div>
           </div>
           <div class="form-group row mb-4">
             <label for="password" class="col-12">Mot de passe</label>
             <div class="col-12">
-              <input type="password" class="form-control" id="password" name="password" minlength="2" maxlength="20" required>
+              <input type="password" class="form-control" id="password" name="password" minlength="2" maxlength="30" required>
             </div>
           </div>
-          <button class="btn btn-dark w-100 p-2">Se Connecter</button>
+          <button type="submit" class="btn btn-dark w-100 p-2">Se Connecter</button>
         </main>
       </form>
+      <a href="inscription.php" class="text-dark text-decoration-none">Besoin d'un compte ?</a>
     </main>
   </div>
 
@@ -51,7 +52,7 @@
   <?php
   if (isset($_POST['email']) && isset($_POST['password'])) {
     session_start();
-    require_once("bddconnexion.php");
+    require("bddconnexion.php");
 
     if (!empty($_POST['email'] && $_POST['password'])) {
       $email = $_POST['email'];
@@ -59,45 +60,30 @@
 
       $req = $bdd->prepare('Select * from Utilisateur where email ="' . $email . '"');
       $req->execute();
-      $user = $req->fetchAll();
+      $user = $req->fetch();
+      //var_dump($user);
 
       if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['login'] = $user['username'];
-        $_SESSION['id'] = $user['id_utilisateur'];
-        $_SESSION['role'] = $user['administrator'];
+
         if ($user['password'] == $password) {
-          header('Location:acceuil.php');
+          $_SESSION['login'] = $user['username'];
+          $_SESSION['id'] = $user['id_utilisateur'];
+          $_SESSION['role'] = $user['administrator'];
+          header('Location:accueil.php');
         } else {
           header('Location: index.php');
-          echo '<div class="alert alert-warning" role="alert">
-          Impossible de se connecter
-        </div>';
-        die();
+          die();
         }
-      }
-      else{
+      } else {
         header('Location: index.php');
-          echo '<div class="alert alert-warning" role="alert">
-          Impossible de se connecter
-        </div>';
         die();
       }
-    }
-    else{
+    } else {
       header('Location: index.php');
-          echo '<div class="alert alert-warning" role="alert">
-          Impossible de se connecter
-        </div>';
-        die();
+      die();
     }
   }
-  else{
-    header('Location: index.php');
-          echo '<div class="alert alert-warning" role="alert">
-          Impossible de se connecter
-        </div>';
-        die();
-  }
+
   ?>
 </body>
 

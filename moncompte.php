@@ -1,3 +1,8 @@
+<?php
+require('sessionUser.php');
+
+require('bddconnexion.php');
+?>
 <!DOCTYPE html>
 <html>
 <?php include("head.php") ?>
@@ -12,21 +17,21 @@
             <div class="mt-120 mb-75">
                 <h1>Votre compte</h1>
                 <h4>Vous pouvez changer vos identifiants</h4>
-                <form action="contact.php" method="Post">
+                <form action="moncompte.php" method="Post">
                     <div class=" row mb-3">
                         <div class="col-6">
-                            <label for="input1" class="form-label fs-5">Username</label>
-                            <input type="text" id="input1" class="form-control">
+                            <label for="user" class="form-label fs-5">Username</label>
+                            <input type="text" id="user" name="user" class="form-control">
                         </div>
                         <div class="col-6">
-                            <label for="input2" class="form-label fs-5">Password</label>
-                            <input type="text" id="input2" class="form-control">
+                            <label for="password" class="form-label fs-5">Password</label>
+                            <input type="text" id="password" name="password" class="form-control">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
-                            <label for="input3" class="form-label fs-5">Email</label>
-                            <input type="email" id="input3" class="form-control">
+                            <label for="email" class="form-label fs-5">Email</label>
+                            <input type="email" id="email" name="email" class="form-control">
                         </div>
                     </div>
                     <button type="button" type="submit" class="btn btn-dark text-center">Changer</button>
@@ -48,3 +53,19 @@
 </body>
 
 </html>
+<?php
+
+
+if (!empty($_POST['user']) and !empty($_POST['password']) and $_POST['email']) {
+    $user = $_POST['user'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $id = $_SESSION['id'];
+    $req = $bdd->prepare("Update Utilisateur set username='$user',password='$password',email='$email' where id_utilisateur=$id  ");
+    $req->execute();
+    $res = $req->rowCount();
+    if ($res > 0) {
+        header('Location:index.php');
+    }
+}
+?>

@@ -7,11 +7,10 @@ $articles =[];
 for($i=1;$i<4;$i++){
 $req = $bdd->prepare('select * from Article where num_catalogue="'.$i.'"');
 $req->execute();
-$res= $req->fetchAll();
+$res= $req->fetch();
 $articles[$j]=$res;
 $j++;
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +28,8 @@ $j++;
             <h1 class="text-center fs-50 "> Nos meilleurs articles</h1>
             <div id="carouselExample" class="carousel slide fixed " data-bs-ride="carousel">
                 <div class="carousel-inner  ">
-                    <?php foreach($article as $articles):;?>
+                    <?php foreach($articles as $article):;?>
+                    <?php if($article['num_catalogue']==1):;?>
                     <div class="carousel-item active text-center ">
                         
                             <?php
@@ -38,6 +38,16 @@ $j++;
                        
                         <h5><?=$article['nom_article'];?></h5>
                     </div>
+                    <?php elseif($article['num_catalogue']!=1):;?>
+                    <div class="carousel-item text-center ">
+                        
+                        <?php
+                        echo '<img src="img/'.$article['image_article'].'" class="img-fluid" alt="article">';
+                        ?>
+                   
+                    <h5><?=$article['nom_article'];?></h5>
+                </div>
+                <?php endif; ?>
                     <?php endforeach;?>
                 </div>
 

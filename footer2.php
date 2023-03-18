@@ -1,4 +1,4 @@
-<footer class="border footer fixed-bottom">
+<footer class="border footer fixed-bottom" id="footer">
     <div class="container">
         <div class="row align-middle py-5 flex gy-3">
             <div class="col-12 col-md-4 text-uppercase text-dark fw-bold">
