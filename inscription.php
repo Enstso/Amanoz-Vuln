@@ -59,7 +59,7 @@
     <?php
 
 
-    if (!empty($username) && !empty($email) && !empty($password)) {
+    if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
         include('bddconnexion.php');
         $username = $_POST['username'];

@@ -1,3 +1,12 @@
+<?php
+require('sessionUser.php');
+
+require('bddconnexion.php');
+$id = $_Session['id'];
+$req = $bdd->prepare("Select id_article, nom_article, description_article, prix_article, image_article, id_panier,passer,num_utilisateur from Mettre inner join Panier on Mettre.id_article = Panier.id_article inner join Utilisateur on Article.id_utilisateur = Utilisateur.id_utilisateur  where passer=0 and num_utilisateur='$id'");
+$req->execute();
+$res = $req->fetchAll();
+?>
 <!DOCTYPE html>
 <html>
 <?php include("head.php") ?>

@@ -35,9 +35,9 @@ require('bddconnexion.php');
                             <label for="catalogue" class="form-label fs-5">Catalogue</label>
                             <select name="catalogue" id="catalogue" class="form-select" aria-label="Default select example" aria-placeholder="Catalogue">
                                 <option value="" disabled selected hidden>Catalogue</option>
-                                <option value="1">Télévision</option>
-                                <option value="2">Fauteuil</option>
-                                <option value="3">Lit</option>
+                                <option value="3">Télévision</option>
+                                <option value="1">Fauteuil</option>
+                                <option value="2">Lit</option>
                             </select>
                         </div>
                         <div class="col-6">
@@ -64,8 +64,8 @@ require('bddconnexion.php');
     </body>
 
 </html>
-    <?php
-    if (isset($_POST['addimg']) and $_POST['addimg']['error'] == 0) {
+<?php
+    if (isset($_FILES['addimg']) and $_FILES['addimg']['error'] == 0) {
 
         $nom = $_POST['addNom'];
         $prix = $_POST['addPrix'];
@@ -83,7 +83,7 @@ require('bddconnexion.php');
                 $req = $bdd->prepare("Insert Into Article (nom_article,description_article,prix_article,image_article,num_catalogue) Values('$nom','$description','$prix','$image','$numCatalogue') ");
                 $req->execute();
                 $res = $req->fetchAll();
-                var_dump($res);
+                
             }
         }
     }
