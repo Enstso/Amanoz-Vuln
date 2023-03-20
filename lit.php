@@ -23,7 +23,6 @@ $res = $req->fetchAll();
                 <?php foreach ($res as $article) : ?>
                     <div class="col-12 col-md-6 col-lg-4 mb-2">
                         <div class="card mx-auto" style="width: 18rem;">
-
                             <?php
                             echo '<img src="img/' . $article['image_article'] . '" class="card-img-top border" alt="article">';
                             ?>
@@ -31,10 +30,10 @@ $res = $req->fetchAll();
                                 <h5 class="card-title"><?= $article['nom_article'] . ' | ' . $article['prix_article'] . ' €' ?></h5>
                                 <p class="card-text"><?= $article['description_article'] ?></p>
                                 <?php
-                                echo '<a href="panier.php?id=' . $article['id_article'] . '" class="btn btn-dark me-2">Au panier</a>';
-                                if($_SESSION['role']==1) :;
-                                echo '<a href="updateArticle.php?id=' . $article['id_article'] . '" class="btn btn-warning me-2"><i class="bi bi-arrow-clockwise "></i></a>';
-                                echo '<a href="delete.php?id=' . $article['id_article'] . '" class="btn btn-danger"><i class="bi bi-trash"></i></a>';
+                                echo '<a href="addpanier.php?id=' . $article['id_article'] . '" class="btn btn-dark me-2">Au panier</a>';
+                                if ($_SESSION['role'] == 1) :;
+                                    echo '<a href="updateArticle.php?id=' . $article['id_article'] . '" class="btn btn-warning me-2"><i class="bi bi-arrow-clockwise "></i></a>';
+                                    echo '<a href="delete.php?id=' . $article['id_article'] . '" class="btn btn-danger"><i class="bi bi-trash"></i></a>';
                                 endif;
                                 ?>
                             </div>
@@ -54,5 +53,3 @@ $res = $req->fetchAll();
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
-
-   

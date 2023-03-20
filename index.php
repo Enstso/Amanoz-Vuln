@@ -22,7 +22,7 @@
   <div class="container">
     <main class=" position-absolute top-50 start-50 translate-middle">
       <h1 class="h3 mb-3 font-weight-normal  text-white text-center"> <span class=" bg-dark bg-gradient p-1 m-0 rounded-3">AMA</span> <span class=" m-0 text-dark p-1 fs-2">NOZ</span> </h1>
-      <form method="Post" action="index.php"  class="form-signin">
+      <form method="Post" action="index.php" class="form-signin">
         <main>
           <div class="form-group row mb-4">
             <label for="email" class="col-12">Email</label>

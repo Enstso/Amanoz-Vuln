@@ -17,7 +17,7 @@ require('bddconnexion.php');
             <div class="mt-120 mb-75">
                 <h1>Votre compte</h1>
                 <h4>Vous pouvez changer vos identifiants</h4>
-                <form action="moncompte.php" method="Post">
+                <form action="updatemoncompte.php" method="Post">
                     <div class=" row mb-3">
                         <div class="col-6">
                             <label for="user" class="form-label fs-5">Username</label>
@@ -34,7 +34,7 @@ require('bddconnexion.php');
                             <input type="email" id="email" name="email" class="form-control">
                         </div>
                     </div>
-                    <button type="button" type="submit" class="btn btn-dark text-center">Changer</button>
+                    <button type="submit" class="btn btn-dark text-center">Changer</button>
             </div>
 
 
@@ -53,19 +53,3 @@ require('bddconnexion.php');
 </body>
 
 </html>
-<?php
-
-
-if (!empty($_POST['user']) and !empty($_POST['password']) and $_POST['email']) {
-    $user = $_POST['user'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $id = $_SESSION['id'];
-    $req = $bdd->prepare("Update Utilisateur set username='$user',password='$password',email='$email' where id_utilisateur=$id  ");
-    $req->execute();
-    $res = $req->rowCount();
-    if ($res > 0) {
-        header('Location:index.php');
-    }
-}
-?>

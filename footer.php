@@ -1,4 +1,3 @@
-
 <footer class="border footer fixed" id="footer">
     <div class="container">
         <div class="row align-middle py-5 flex gy-3">
@@ -7,7 +6,7 @@
             </div>
             <div class="col-12 col-md-4 text-md-center ">
                 <a href="#modal1" class="fw-normal text-dark text-decoration-none mb-0 " data-bs-toggle="modal">Mentions légales</a>
-                <div class="modal fade "  id="modal1" tabindex="-1" aria-hidden="true" aria-labelledby="modalLbl1"  >
+                <div class="modal fade " id="modal1" tabindex="-1" aria-hidden="true" aria-labelledby="modalLbl1">
                     <div class="modal-dialog   bg-light">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalLbl1">Mentions légales</h5>
@@ -16,7 +15,7 @@
                         <div class="modal-body">
                             <p>Propriétaire du site Enstso Janvier</p></br>
                             <p>Mail : enstso@outlook.fr</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -39,10 +38,3 @@
     </div>
 </footer>
 
-<script>
-// Get the modal
-var modal = document.getElementById('modal1');
-var modal_backdrop = document.getElementsByClassName('modal-backdorp'); 
-// When the user clicks anywhere outside of the modal, close it
-
-</script>

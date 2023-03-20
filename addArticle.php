@@ -36,7 +36,7 @@ require('bddconnexion.php');
                             <select name="catalogue" id="catalogue" class="form-select" aria-label="Default select example" aria-placeholder="Catalogue">
                                 <option value="" disabled selected hidden>Catalogue</option>
                                 <option value="3">Télévision</option>
-                                <option value="1">Fauteuil</option>
+                                <option value="1">Canapé</option>
                                 <option value="2">Lit</option>
                             </select>
                         </div>
@@ -83,7 +83,7 @@ require('bddconnexion.php');
                 $req = $bdd->prepare("Insert Into Article (nom_article,description_article,prix_article,image_article,num_catalogue) Values('$nom','$description','$prix','$image','$numCatalogue') ");
                 $req->execute();
                 $res = $req->fetchAll();
-                
+               
             }
         }
     }

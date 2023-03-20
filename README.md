@@ -1,8 +1,39 @@
 # Amanoz
 
-1. Création d'un site web qui interroge une base de données 
-2. Faire du Crud depuis le site, c'est à dire (Afficher, Créer, Supprimer les Articles).
+## Contexte : Pour la première année de BTS SIO, un projet en php permettant de faire  du Crud a été fait, c'est un site e-commerce.
 
+## <u>Cas d'utilisation Client</u> :
+
+```plantuml
+@startuml Amanoz
+left to right direction
+:Client:
+package Amanoz{
+    Client--(Se connecter)
+    
+    (Se connecter)<..(Consulter le catalogue) : <<include>>
+	(Se connecter)<..(Commander des articles) : <<include>>
+	(Se connecter)<..(Changer ses identifiants) : <<include>>
+	
+}
+@enduml
+```
+
+## <u>Cas d'utilisation Admin</u> :
+```plantuml
+@startuml Amanoz
+left to right direction
+:Admin:
+package Amanoz{
+    Admin--(Se connecter)
+    
+    (Se connecter)<..(Ajouter des articles) : <<include>>
+	(Se connecter)<..(Modifier les articles) : <<include>>
+	(Se connecter)<..(Supprimer les articles) : <<include>>
+	
+}
+@enduml
+```
 ## <u>Diagramme de classe</u> :
 
 ```plantuml
@@ -35,20 +66,18 @@ class Panier{
     <u>id_panier</u>
     num_article
     num_utilisateur
+	passer
 }
 
-class Mettre{
-    <u>id_article</u>
-    <u>id_panier</u>
-}
+
 Catalogue "1..1"--- "1..*" Article
-Article "1..*"--"0..*" Panier
+Article "1..*"---"0..*" Panier
 Utilisateur "1..1 "---"0..1"Panier
-(Article,Panier)..Mettre
+
 @enduml
 ```
 
-## Base de données :
+## <u>Base de données</u> :
 
 ```sql
 DROP database if exists dbamanoz;
@@ -83,19 +112,36 @@ CREATE TABLE Article(
 
 CREATE TABLE Panier(
 	id_panier INTEGER NOT NULL Auto_Increment,
+	num_article INTEGER,
 	num_utilisateur INTEGER,
 	passer Boolean,
 	PRIMARY KEY(id_panier),
-	FOREIGN KEY(num_utilisateur) REFERENCES Utilisateur(id_utilisateur)
-);
-
-CREATE TABLE Mettre(
-	id_article INTEGER,
-	id_panier INTEGER,
-	PRIMARY KEY(id_article,id_panier),
-	FOREIGN KEY(id_article) REFERENCES Article(id_article),
-	FOREIGN KEY(id_panier) REFERENCES Panier(id_panier)
+	FOREIGN KEY(num_utilisateur) REFERENCES Utilisateur(id_utilisateur),
+	FOREIGN KEY(num_article) REFERENCES Article(id_article)
 );
 
 ```
 
+### En admin :
+
+
+![imgr/f1.PNG](imgr/f1.PNG)
+![imgr/f2.PNG](imgr/f2.PNG)
+![imgr/f3.PNG](imgr/f3.PNG)
+![imgr/f4.PNG](imgr/f4.PNG)
+![imgr/f5.PNG](imgr/f5.PNG)
+![imgr/f6.PNG](imgr/f6.PNG)
+![imgr/f7.PNG](imgr/f7.PNG)
+![imgr/f8.PNG](imgr/f8.PNG)
+![imgr/f9.PNG](imgr/f9.PNG)
+![imgr/f10.PNG](imgr/f10.PNG)
+![imgr/f11.PNG](imgr/f11.PNG)
+![imgr/f12.PNG](imgr/f12.PNG)
+![imgr/f13.PNG](imgr/f13.PNG)
+![imgr/f14.PNG](imgr/f14.PNG)
+![imgr/f15.PNG](imgr/f15.PNG)
+![imgr/f16.PNG](imgr/f16.PNG)
+![imgr/f17.PNG](imgr/f17.PNG)
+![imgr/f18.PNG](imgr/f18.PNG)
+![imgr/f19.PNG](imgr/f19.PNG)
+![imgr/f20.PNG](imgr/f20.PNG)

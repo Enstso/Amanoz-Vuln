@@ -3,6 +3,9 @@ require('sessionUser.php');
 
 require('bddconnexion.php');
 
+if(!isset($_GET['id'])){
+    header('Location:accueil.php');
+}
 
 ?>
 <!DOCTYPE html>

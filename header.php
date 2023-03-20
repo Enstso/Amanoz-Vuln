@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="nav-items">
                 <ul class=" navbar-nav">
                     <li class="nav-item active"><a class="nav-link " href="tv.php">Télévison</a></li>
-                    <li class="nav-item"><a class="nav-link " href="fauteuil.php">Fauteuil</a></li>
+                    <li class="nav-item"><a class="nav-link " href="canape.php">Canapé</a></li>
                     <li class="nav-item"><a class="nav-link " href="lit.php">Lit</a></li>
                     <li class="nav-item"><a class="nav-link " href="#footer">Contact</a></li>
 

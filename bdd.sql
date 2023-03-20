@@ -30,33 +30,29 @@ CREATE TABLE Article(
 
 CREATE TABLE Panier(
 	id_panier INTEGER NOT NULL Auto_Increment,
+	num_article INTEGER,
 	num_utilisateur INTEGER,
 	passer Boolean,
 	PRIMARY KEY(id_panier),
-	FOREIGN KEY(num_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	FOREIGN KEY(num_utilisateur) REFERENCES Utilisateur(id_utilisateur),
+	FOREIGN KEY(num_article) REFERENCES Article(id_article)
 );
 
-CREATE TABLE Mettre(
-	id_article INTEGER,
-	id_panier INTEGER,
-	PRIMARY KEY(id_article,id_panier),
-	FOREIGN KEY(id_article) REFERENCES Article(id_article),
-	FOREIGN KEY(id_panier) REFERENCES Panier(id_panier)
-);
 
-insert into Utilisateur (username,password,email,administrator) values ("Zunaid","siojjr","mzunaid2003@gmail.com",0);
-insert into Utilisateur (username,password,email,administrator) values ("Léo","siojjr","tranleo95820@gmail.com",0);
-insert into Utilisateur (username,password,email,administrator) values ("Enstso","siojjr","enstso@outlook.fr",1);
-insert into Utilisateur (username,password,email,administrator) values ("Sami","siojjr","samie17030@gmail.com",0);
-insert into Catalogue (nom_catalogue) values ("fauteuil");
+
+insert into Utilisateur (username,password,email,administrator) values ("Joe","siojjr","joe@gmail.com",0);
+insert into Utilisateur (username,password,email,administrator) values ("Mams","siojjr","mams@gmail.com",0);
+insert into Utilisateur (username,password,email,administrator) values ("admin","siojjr","admin@outlook.fr",1);
+insert into Utilisateur (username,password,email,administrator) values ("Jule","siojjr","jule@gmail.com",0);
+insert into Catalogue (nom_catalogue) values ("canapé");
 insert into Catalogue (nom_catalogue) values ("aspirateur");
 insert into Catalogue (nom_catalogue) values ("tv");
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Aspirateur sans fil Dyson V15 Detect™ Absolute (Nickel)",1,"balai électrique - Autonomie 80 min - Temps de charge 4 h - Capacité 0.70 - Tension 21.6 V ",749.00,"canap1.jpg");
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("DYSON Aspirateur balai V8 Motorhead",1,"balai électrique - Autonomie 40 min - Temps de charge 5 h - Capacité 0.54 - Tension 21.6 V",329.00,"canap2.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Série 8 Aspirateur rechargeable Unlimited Blanc ",1,"Balai électrique - autonomie 40 min - Temps de charge 5 h- capacité 0.50 - Tension 18,0 V",315.00,"canap3.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Réfrigérateur SAMSUNG",2,"Réfrigérateur de 636 L (idéal pour 6 personnes et +) – Congélateur : 400 L - multi-portes",2199.00,"lit1.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Réfrigérateur HAIER",2,"Réfrigérateur de 428 L (idéal pour 4 personnes et +) - Congélateur : 200 L - multi-portes ",1549.00,"lit2.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Réfrigérateur Américain Samsung",2,"Réfrigérateur de 389 L (idéal pour 3 personnes et +) - Congélateur : 225 L – multi portes",2449.00,"lit3.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Télévision Samsung QLED 65Q60A 2021, SERIE 6",3,"Des couleurs éclatantes avec les Quantum Dots - QLED 100% Color Volume - Design ultra fin 25mm - Résolution 1800x2000",999.00,"tv1.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Tv LG oled 55 LG OLED55A1",3,"Des couleurs Pétillante avec les Quantum Dots - OLED 100% Color Volume - 75mm – Résolution 1500x2000",1500.00,"tv2.jpg"); 
-insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("TV LED SONY KD43X85J Google TV 2021",3,"Des couleurs éclatantes avec des led – OLED 100% Color Volume – 90mm – 1400x1800",900.00,"tv3.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Canapé dégradé",1,"Modèle dégradé - 2 coussins - cotton",749.00,"canap1.jpg");
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Canapé marine ",1,"Modèle marine - 2 coussins - cotton",329.00,"canap2.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Canapé gris",1,"Modèle gris - 2 coussins - cotton",315.00,"canap3.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Lit rose",2,"Modèle rose 2 places - 140x200",2199.00,"lit1.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Lit gris",2,"Modèle gris 2 places - 140x200",1549.00,"lit2.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Lit beige",2,"Modèle beige 2 places - 140x200",2449.00,"lit3.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Tv Epsilon",3,"Des couleurs éclatantes avec les Quantum Dots - QLED 100% Color Volume - Design ultra fin 25mm - Résolution 1800x2000",999.00,"tv1.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("Tv Philisp oled 55 LG OLED55A1",3,"Des couleurs Pétillante avec les Quantum Dots - OLED 100% Color Volume - 75mm – Résolution 1500x2000",1500.00,"tv2.jpg"); 
+insert into Article (nom_article,num_catalogue,description_article,prix_article,image_article) values ("TV LED Samsung KD43X85J Google TV 2021",3,"Des couleurs éclatantes avec des led – OLED 100% Color Volume – 90mm – 1400x1800",900.00,"tv3.jpg"); 
