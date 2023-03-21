@@ -124,24 +124,82 @@ CREATE TABLE Panier(
 
 ### En admin :
 
-
+je me connecte à l'interface de connexion pour accéder au site  :
 ![imgr/f1.PNG](imgr/f1.PNG)
+
+Les clients ont la possiblité de créer un compte :
 ![imgr/f2.PNG](imgr/f2.PNG)
+
+ La page accueil.php :
+
 ![imgr/f3.PNG](imgr/f3.PNG)
+
+Nous pouvons voir les différents articles du catalogue Lit depusi cette page nous avons la possiblité de modifier et de supprimer l'article :
+
 ![imgr/f4.PNG](imgr/f4.PNG)
+
+Pour ajouter un article je clique sur l'icone de  l'utilisateur :
+
 ![imgr/f5.PNG](imgr/f5.PNG)
+
+
 ![imgr/f6.PNG](imgr/f6.PNG)
+
+le produit a bien été modifiée et  pour modifier l'article je clique sur l'icone jaune du produit :
+
 ![imgr/f7.PNG](imgr/f7.PNG)
+ 
+
+Modification du projet :
+
 ![imgr/f8.PNG](imgr/f8.PNG)
+
+Le produit a bien été modifiée :
+
 ![imgr/f9.PNG](imgr/f9.PNG)
+
+Pour supprimer un produit, je clique sur l'icone rouge du produit :
+
 ![imgr/f10.PNG](imgr/f10.PNG)
+
+Le produit a bien été supprimée :
+
 ![imgr/f11.PNG](imgr/f11.PNG)
+
+## Client :
+
+Je me connecte en tant qu'utilisateur :
+
 ![imgr/f12.PNG](imgr/f12.PNG)
+
+accueil.php connecter en tant que Joe :
+
 ![imgr/f13.PNG](imgr/f13.PNG)
+
+Les articles :
+
 ![imgr/f14.PNG](imgr/f14.PNG)
+
+Le panier de l'utilisateur connectée:
+
 ![imgr/f15.PNG](imgr/f15.PNG)
+
+Après avoir commandée je consulte mes commandes :
+
 ![imgr/f16.PNG](imgr/f16.PNG)
+
+L'utilisateur a la possibilitée de modifier ses identifiants :
+
 ![imgr/f17.PNG](imgr/f17.PNG)
+
+Les saisies :
+
 ![imgr/f18.PNG](imgr/f18.PNG)
+
+Connection :
+
 ![imgr/f19.PNG](imgr/f19.PNG)
+
+Les identifiants de joe ont bien été modifiées :
+
 ![imgr/f20.PNG](imgr/f20.PNG)
