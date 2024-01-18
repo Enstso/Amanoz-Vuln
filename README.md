@@ -1,6 +1,6 @@
-# Amanoz
+# Amanoz Vuln
 
-## Contexte : Pour la première année de BTS SIO, un projet en php permettant de faire  du Crud a été fait, c'est un site e-commerce.
+## Contexte : Projet php e-commerce, vulnérable introduction au pentest.
 
 ## <u>Cas d'utilisation Client</u> :
 
