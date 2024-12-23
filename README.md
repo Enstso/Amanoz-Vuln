@@ -1,8 +1,11 @@
 # Amanoz Vuln
 
-## Contexte : Projet php e-commerce, vulnérable introduction au pentest.
+This project is a vulnerable PHP-based e-commerce application designed for learning and practicing penetration testing techniques. It simulates a real-world online store, with various security flaws intentionally introduced to help users understand common web vulnerabilities and how to exploit them in a controlled environment.
 
-## <u>Cas d'utilisation Client</u> :
+
+## Contexte : PHP e-commerce project with a focus on penetration testing.
+
+## <u>Client Use Case</u> :
 
 ```plantuml
 @startuml Amanoz
@@ -19,7 +22,8 @@ package Amanoz{
 @enduml
 ```
 
-## <u>Cas d'utilisation Admin</u> :
+## <u>Admin Use Case</u> :
+
 ```plantuml
 @startuml Amanoz
 left to right direction
@@ -34,7 +38,7 @@ package Amanoz{
 }
 @enduml
 ```
-## <u>Diagramme de classe</u> :
+## <u>Class Diagram</u> :
 
 ```plantuml
 @startuml
@@ -77,7 +81,7 @@ Utilisateur "1..1 "---"0..1"Panier
 @enduml
 ```
 
-## <u>Base de données</u> :
+## <u>Database</u> :
 
 ```sql
 DROP database if exists dbamanoz;
@@ -122,84 +126,86 @@ CREATE TABLE Panier(
 
 ```
 
-### En admin :
+### admin :
 
-je me connecte à l'interface de connexion pour accéder au site  :
+I log into the login interface to access the site:
+
 ![imgr/f1.PNG](imgr/f1.PNG)
 
-Les clients ont la possiblité de créer un compte :
+Clients have the option to create an account :
+
 ![imgr/f2.PNG](imgr/f2.PNG)
 
- La page accueil.php :
+Homepage (accueil.php) :
 
 ![imgr/f3.PNG](imgr/f3.PNG)
 
-Nous pouvons voir les différents articles du catalogue Lit depusi cette page nous avons la possiblité de modifier et de supprimer l'article :
+We can see the different items in the catalog. From this page, we can modify and delete items :
 
 ![imgr/f4.PNG](imgr/f4.PNG)
 
-Pour ajouter un article je clique sur l'icone de  l'utilisateur :
+To add an item, I click on the user icon :
 
 ![imgr/f5.PNG](imgr/f5.PNG)
 
 
 ![imgr/f6.PNG](imgr/f6.PNG)
 
-le produit a bien été modifiée et  pour modifier l'article je clique sur l'icone jaune du produit :
+The product has been successfully modified. To modify the item, I click on the yellow icon of the product :
 
 ![imgr/f7.PNG](imgr/f7.PNG)
  
 
-Modification du projet :
+Modification of the project :
 
 ![imgr/f8.PNG](imgr/f8.PNG)
 
-Le produit a bien été modifiée :
+The product has been successfully modified :
 
 ![imgr/f9.PNG](imgr/f9.PNG)
 
-Pour supprimer un produit, je clique sur l'icone rouge du produit :
+To delete a product, I click on the red icon of the product :
 
 ![imgr/f10.PNG](imgr/f10.PNG)
 
-Le produit a bien été supprimée :
+The product has been successfully deleted :
 
 ![imgr/f11.PNG](imgr/f11.PNG)
 
 ## Client :
 
-Je me connecte en tant qu'utilisateur :
+I log in as a use :
 
 ![imgr/f12.PNG](imgr/f12.PNG)
 
-accueil.php connecter en tant que Joe :
+I log in as a use :
 
 ![imgr/f13.PNG](imgr/f13.PNG)
 
-Les articles :
+The items :
 
 ![imgr/f14.PNG](imgr/f14.PNG)
 
-Le panier de l'utilisateur connectée:
+Le panier de l'utilisateur connectée :
 
 ![imgr/f15.PNG](imgr/f15.PNG)
 
-Après avoir commandée je consulte mes commandes :
+he logged-in user's cart :
 
 ![imgr/f16.PNG](imgr/f16.PNG)
 
-L'utilisateur a la possibilitée de modifier ses identifiants :
+After ordering, I check my orders :
 
 ![imgr/f17.PNG](imgr/f17.PNG)
 
-Les saisies :
+The entries :
 
 ![imgr/f18.PNG](imgr/f18.PNG)
 
-Connection :
+Login :
 
 ![imgr/f19.PNG](imgr/f19.PNG)
 
-Les identifiants de joe ont bien été modifiées :
+Joe's credentials have been successfully updated :
 
 ![imgr/f20.PNG](imgr/f20.PNG)
